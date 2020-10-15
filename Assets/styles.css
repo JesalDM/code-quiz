@@ -1,0 +1,9 @@
+.container{
+    text-align: center;
+    margin: 80px auto;
+    width: 60%;
+   }
+   
+   h1, h3{
+    margin: 30px;
+   }

@@ -18,18 +18,37 @@
 </head>
 <body>
     <!--Main welcome Page-->
-        <!--Div for top bar that links to Highscores and displays time left and score-->
-        <!--Div for header, rules and start button-->
-
-    <!--Questions page-->
+        <!--Header that links to Highscores and displays time-left and score-->
+    
+   
+    <!--Used container and grid system for making the page responsive-->
+    <div class = "container">
+         <!--Div for welcome message, rules of the quiz game, and start button-->
+        <div class="row welcome" id = "welcome-pg">
+            <div class="col-12">
+                <h1> Welcome to the Javascript Coding Quiz Game!</h1>
+                <p> Test your javascript skills using this coding quiz that contains 5 questions. <br> 
+                    You will be given 180 secs to complete the quiz. </p>
+                <p> Every correct answer will fetch you 2 points. Maximum score is 10 points. <br>
+                    Every incorrect answer will take away 10 secs from the remaining time left on the clock.</p>
+                <h3> Good luck!</h3>
+                <!--Used Bootstrap button classes-->
+                <button class= "btn btn-primary btn-lg" id="start"> Start the Quiz</button>
+            </div>
+        </div>
+    
+     <!--Questions page-->
         <!-- Div for question -->
         <!-- Div for multi-choice options -->
         <!-- Div to display the answer is correct or incorrect -->
 
-    <!--Final score and Enter initials Page-->
-       <!--Div for displaying the final score and submitting the initials-->
-       <!--Use Bootstrap modal for displaying the highscores-->
+     <!--Final score and Enter initials Page-->
+        <!--Div for displaying the final score and submitting the initials-->
+        
+    </div>
 
+     <!--Use Bootstrap modal for displaying the highscores-->
+       
 
     <!-- Linking javascript -->
     <script type="text/javascript" src=./Assets/script.js></script>
