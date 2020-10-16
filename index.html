@@ -54,7 +54,7 @@
         </div>
     
     <!--Questions page-->
-        <!--All the divs in this row are hidden initially-->
+        <!--All the divs in this row are hidden by default-->
         <div class="row question-row hide">
             <div class = "col-12">
                  <!-- Div for question -->
@@ -77,7 +77,7 @@
          </div>
         
     <!--Final score and Enter initials Page-->
-        <!--Div for displaying the final score and submitting the initials, which is hidden initially-->
+        <!--Div for displaying the final score and submitting the initials, which is hidden by default-->
         <div class="row hide" id="initials-pg">
             <div class = "col-12">
               <h3>All done!</h3>
@@ -86,6 +86,12 @@
               <input type="text" id="initials" name="nameInitials"></br>
               <button class="btn btn-primary" id="submit">Submit</button>
             </div>
+        </div>
+    <!--Final page with links to take quiz again and view highscores, hidden by dfault-->
+        <div class="final-pg hide">
+            <!-- Used Bootstrap classes to create and style the buttons-->
+            <button class="btn btn-primary btn-lg" id="go-back">Take Quiz again</button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">View Highscores</button>
         </div>
     </div>
 

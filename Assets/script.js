@@ -9,6 +9,10 @@ const displayAns = document.querySelector(".display-answer");
 const points = document.querySelector("#score");
 const initialsPg = document.querySelector("#initials-pg");
 const finalScore = document.querySelector("#final-score");
+const submitBtn = document.querySelector("#submit");
+const initialsInput = document.querySelector("#initials");
+const takeQuizBtn = document.querySelector("#go-back");
+const finalPg = document.querySelector(".final-pg");
 
 // Create an object that holds the quiz questions, multi-choice options and the answers.
 /* The quiz questions have been taken from the following 2 websites:
@@ -107,7 +111,39 @@ options.addEventListener("click", function(event){
     };
 })
 
+// initialized an empty array that will hold objects that will store user initials and scores needed for viewing highscores
+let highscoreTable = [];
+
+// Added event listener to submit button after user enters his/her initials
+submitBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    // create an object to be pushed into the highscoreTable array
+    const currScore = {};
+    currScore.name = initialsInput.value;
+    currScore.score = score;
+    // storing the initials and score as an object in the highscoreTable array
+    highscoreTable[highscoreTable.length] = currScore;
+    // handling the score, timer and initials input box values
+    initialsInput.value = "";
+    countdown.textContent = 0;
+    score = 0;  
+    points.textContent=score; 
+    // unhide the final page with button links to take quiz again and view highscores
+    finalPg.classList.remove("hide");
+    // hide this page on submit 
+    initialsPg.classList.add("hide"); 
+})
+
+// Added event listener to 'Take Quiz again' button when user clicks on it
+takeQuizBtn.addEventListener("click", function(){
+    // resetting the currentIndex and secondsleft to be ready for the quiz game again
+    currentIndex=0;
+    secondsLeft = 180;
+    // bring up the welcome page to strat the quiz again
+    welcomePg.classList.remove("hide");
+    // hide this page
+    finalPg.classList.add("hide");
+})
 //Add event listeners 
-   // to the Submit button when user enters the initials to submit
-   // to the Clear-Highscores button when user clicks on it to delete all the existing highscores
-   // to the Take-Quiz-again button to return back to main page to restart the quiz
+      // to the Clear-Highscores button when user clicks on it to delete all the existing highscores
+   
