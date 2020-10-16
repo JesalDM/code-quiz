@@ -1,3 +1,7 @@
+<!--The quiz questions have been taken from the following 2 websites:
+     https://www.w3schools.com/js/js_quiz.asp
+     https://data-flair.training/blogs/javascript-quiz/-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +22,19 @@
 </head>
 <body>
     <!--Main welcome Page-->
-        <!--Header that links to Highscores and displays time-left and score-->
-    
+    <!--Header that links to Highscores and displays time-left and score-->
+    <div class="d-flex justify-content-between">
+        <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores-->
+        <a role="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#exampleModalCenter">
+            View Highscores
+        </a>
+        <div class="right-nav">
+            <!--Time element that will track time-left-->
+            <h6>Time: <span id="time">180</span></h6>
+            <!--Score element that will keep a track of user scores per the quiz score rules-->
+            <h6>Score: <span id="score">0</span></h6>
+        </div>
+    </div>
    
     <!--Used container and grid system for making the page responsive-->
     <div class = "container">
@@ -60,15 +75,31 @@
               </div>
          </div>
         
-        
-
      <!--Final score and Enter initials Page-->
         <!--Div for displaying the final score and submitting the initials-->
         
     </div>
 
-     <!--Use Bootstrap modal for displaying the highscores-->
-       
+    <!--Use Bootstrap modal for displaying the highscores-->  
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Highscores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+                    <button type="button" class="btn btn-primary" id="clear">Clear Highscores</button>
+                </div>
+            </div>
+        </div>
+    </div> 
 
     <!-- Linking javascript -->
     <script type="text/javascript" src=./Assets/script.js></script>

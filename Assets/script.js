@@ -4,8 +4,12 @@ const welcomePg = document.querySelector(".welcome");
 const questionRow = document.querySelector(".question-row");
 const questions = document.querySelector(".questions");
 const options = document.querySelector(".options");
+const countdown = document.querySelector("#time");
 
-// Create an object that holds the quiz questions, multi-choice options and the answers
+// Create an object that holds the quiz questions, multi-choice options and the answers.
+/* The quiz questions have been taken from the following 2 websites:
+     https://www.w3schools.com/js/js_quiz.asp
+     https://data-flair.training/blogs/javascript-quiz/ */
 const quizQues = [
     {q: "1) Javascript is a _______-side programming language.",
      a: "Both",
@@ -27,9 +31,21 @@ const quizQues = [
 // Initialize the index, score and time variables
 
 let currentIndex = 0;
+let secondsLeft = 180;
+let score = 0;
 
 // Create functions/loops
    // For setting time interval
+function setTime(){
+    let timer = setInterval(function(){
+         secondsLeft--;
+         countdown.textContent= secondsLeft;
+         if(secondsLeft===0 || currentIndex===quizQues.length){
+             clearInterval(timer);
+             countdown.textContent=0;
+         }
+     },1000);
+ }
    
 // Created a function that displays the questions and the corresponding multi-choice options to the user using a loop
 function displayQues(currQuesObj){
@@ -45,6 +61,7 @@ startQuiz.addEventListener("click", function(){
     welcomePg.classList.add("hide");
     questionRow.classList.remove("hide");
     displayQues(quizQues[currentIndex]);
+    setTime();
 })
 
    // to the options when user clicks on it to select an option

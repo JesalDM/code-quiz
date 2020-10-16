@@ -28,3 +28,11 @@ li{
     padding-left: 10px;
     max-width: 55%;   
 }
+
+/*Custom-styled the nav-like header component on the top of the page*/
+.right-nav, .nav-link{
+    margin:8px 15px;
+    font-size:17px;
+    color: #007bff;
+    font-weight: 600;
+}
