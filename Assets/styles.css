@@ -36,3 +36,7 @@ li{
     color: #007bff;
     font-weight: 600;
 }
+
+button{
+    margin: 20px;
+}

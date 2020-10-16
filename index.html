@@ -21,7 +21,7 @@
     <title>Javascript Code Quiz</title>  
 </head>
 <body>
-    <!--Main welcome Page-->
+   
     <!--Header that links to Highscores and displays time-left and score-->
     <div class="d-flex justify-content-between">
         <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores-->
@@ -38,7 +38,8 @@
    
     <!--Used container and grid system for making the page responsive-->
     <div class = "container">
-         <!--Div for welcome message, rules of the quiz game, and start button-->
+    <!--Main welcome Page-->
+        <!--Div for welcome message, rules of the quiz game, and start button-->
         <div class="row welcome" id = "welcome-pg">
             <div class="col-12">
                 <h1> Welcome to the Javascript Coding Quiz Game!</h1>
@@ -52,8 +53,8 @@
             </div>
         </div>
     
-     <!--Questions page-->
-        
+    <!--Questions page-->
+        <!--All the divs in this row are hidden initially-->
         <div class="row question-row hide">
             <div class = "col-12">
                  <!-- Div for question -->
@@ -75,9 +76,17 @@
               </div>
          </div>
         
-     <!--Final score and Enter initials Page-->
-        <!--Div for displaying the final score and submitting the initials-->
-        
+    <!--Final score and Enter initials Page-->
+        <!--Div for displaying the final score and submitting the initials, which is hidden initially-->
+        <div class="row hide" id="initials-pg">
+            <div class = "col-12">
+              <h3>All done!</h3>
+              <h5>Your final score is <span id="final-score"></span></h5><br>
+              <label for="initials">Enter Initials:</label>
+              <input type="text" id="initials" name="nameInitials"></br>
+              <button class="btn btn-primary" id="submit">Submit</button>
+            </div>
+        </div>
     </div>
 
     <!--Use Bootstrap modal for displaying the highscores-->  
