@@ -1,9 +1,15 @@
+/* Center-aligned the container on the page with a defined width*/
 .container{
     text-align: center;
     margin: 80px auto;
     width: 60%;
-   }
+}
    
-   h1, h3{
+h1, h3{
     margin: 30px;
-   }
+}
+
+/* Created this class that will be used dynamically to display and hide the content within the container*/
+.hide{
+    display: none;
+}
