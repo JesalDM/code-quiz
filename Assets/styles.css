@@ -13,3 +13,18 @@ h1, h3{
 .hide{
     display: none;
 }
+
+/*Styled the entire div related to question page for better user experience */
+.question-row{
+    font-size: 24px;
+    text-align: left;
+}
+
+/*Styled the options to improve their look and feel*/
+li{
+    font-size: 18px;
+    margin: 20px;
+    background-color: lightseagreen;
+    padding-left: 10px;
+    max-width: 55%;   
+}
