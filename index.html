@@ -21,82 +21,87 @@
     <title>Javascript Code Quiz</title>  
 </head>
 <body>
-   
-    <!--Header that links to Highscores and displays time-left and score-->
-    <div class="d-flex justify-content-between">
-        <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores using the "onclick" attribute-->
-        <a role="button" onclick="getHighScores()" class="btn btn-link nav-link" data-toggle="modal" data-target="#exampleModalCenter">
-            View Highscores
-        </a>
-        <div class="right-nav">
-            <!--Time element that will track time-left-->
-            <h6>Time: <span id="time">180</span></h6>
-            <!--Score element that will keep a track of user scores per the quiz score rules-->
-            <h6>Score: <span id="score">0</span></h6>
-        </div>
-    </div>
-   
-    <!--Used container and grid system for making the page responsive-->
-    <div class = "container">
-    <!--Main welcome Page-->
-        <!--Div for welcome message, rules of the quiz game, and start button-->
-        <div class="row welcome" id = "welcome-pg">
-            <div class="col-12">
-                <h1> Welcome to the Javascript Coding Quiz Game!</h1>
-                <p> Test your javascript skills using this coding quiz that contains 5 questions. <br> 
-                    You will be given 180 secs to complete the quiz. </p>
-                <p> Every correct answer will fetch you 2 points. Maximum score is 10 points. <br>
-                    Every incorrect answer will take away 10 secs from the remaining time left on the clock.</p>
-                <h3> Good luck!</h3>
-                <!--Used Bootstrap button classes-->
-                <button class= "btn btn-primary btn-lg" id="start"> Start the Quiz</button>
-            </div>
-        </div>
-    
-    <!--Questions page-->
-        <!--All the divs in this row are hidden by default-->
-        <div class="row question-row hide">
-            <div class = "col-12">
-                 <!-- Div for question -->
-                <div class="questions">
-                    
-                 </div>
-                 <!-- Div for multi-choice options -->
-                 <ol type="a" class="options">
-                     <li role="button"></li>
-                     <li role="button"></li>
-                     <li role="button"></li>
-                     <li role="button"></li>
-                 </ol>
-                 <!-- Div to display the answer is correct or incorrect -->
-                 <div class= "display-answer">
-                     <hr>
-                     <h5></h5>
-                 </div>
-              </div>
-         </div>
-        
-    <!--Final score and Enter initials Page-->
-        <!--Div for displaying the final score and submitting the initials, which is hidden by default-->
-        <div class="row hide" id="initials-pg">
-            <div class = "col-12">
-              <h3>All done!</h3>
-              <h5>Your final score is <span id="final-score"></span></h5><br>
-              <label for="initials">Enter Initials:</label>
-              <input type="text" id="initials" name="nameInitials"></br>
-              <button class="btn btn-primary" id="submit">Submit</button>
-            </div>
-        </div>
-    <!--Final page with links to take quiz again and view highscores, hidden by dfault-->
-        <div class="final-pg hide">
-            <!-- Used Bootstrap classes to create and style the buttons-->
-            <button class="btn btn-primary btn-lg" id="go-back">Take Quiz again</button>
+    <!--Used Header tag to incorporate semantic HTML-->
+    <header>
+        <!--Header that links to Highscores and displays time-left and score-->
+        <div class="d-flex justify-content-between">
             <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores using the "onclick" attribute-->
-            <button type="button" onclick="getHighScores()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">View Highscores</button>
+            <a role="button" onclick="getHighScores()" class="btn btn-link nav-link" data-toggle="modal" data-target="#exampleModalCenter">
+                View Highscores
+            </a>
+            <div class="right-nav">
+                <!--Time element that will track time-left-->
+                <h6>Time: <span id="time">150</span></h6>
+                <!--Score element that will keep a track of user scores per the quiz score rules-->
+                <h6>Score: <span id="score">0</span></h6>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <!--Use Bootstrap modal for displaying the highscores-->  
+    <!--Used main tag to incorporate semantic HTML-->
+    <main>
+        <!--Used container and grid system for making the page responsive-->
+        <div class = "container">
+        <!--Main welcome Page-->
+            <!--Div for welcome message, rules of the quiz game, and start button-->
+            <div class="row welcome" id = "welcome-pg">
+                <div class="col-12">
+                    <h1> Welcome to the Javascript Coding Quiz Game!</h1>
+                    <p> Test your javascript skills using this coding quiz that contains 5 questions. <br> 
+                        You will be given 150 secs to complete the quiz. </p>
+                    <p> Every correct answer will fetch you 2 points. Maximum score is 10 points. <br>
+                        Every incorrect answer will take away 10 secs from the remaining time left on the clock.</p>
+                    <h3> Good luck!</h3>
+                    <!--Used Bootstrap button classes-->
+                    <button class= "btn btn-primary btn-lg" id="start"> Start the Quiz</button>
+                </div>
+            </div>
+        
+        <!--Questions page-->
+            <!--All the divs in this row are hidden by default-->
+            <div class="row question-row hide">
+                <div class = "col-12">
+                    <!-- Div for question -->
+                    <div class="questions">
+                        
+                    </div>
+                    <!-- Div for multi-choice options -->
+                    <ol type="a" class="options">
+                        <li role="button"></li>
+                        <li role="button"></li>
+                        <li role="button"></li>
+                        <li role="button"></li>
+                    </ol>
+                    <!-- Div to display the answer is correct or incorrect -->
+                    <div class= "display-answer">
+                        <hr>
+                        <h5></h5>
+                    </div>
+                </div>
+            </div>
+            
+        <!--Final score and Enter initials Page-->
+            <!--Div for displaying the final score and submitting the initials, which is hidden by default-->
+            <div class="row hide" id="initials-pg">
+                <div class = "col-12">
+                <h3>All done!</h3>
+                <h5>Your final score is <span id="final-score"></span></h5><br>
+                <label for="initials">Enter Initials:</label>
+                <input type="text" id="initials" name="nameInitials"></br>
+                <button class="btn btn-primary" id="submit">Submit</button>
+                </div>
+            </div>
+        <!--Final page with links to take quiz again and view highscores, hidden by dfault-->
+            <div class="final-pg hide">
+                <!-- Used Bootstrap classes to create and style the buttons-->
+                <button class="btn btn-primary btn-lg" id="go-back">Take Quiz again</button>
+                <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores using the "onclick" attribute-->
+                <button type="button" onclick="getHighScores()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">View Highscores</button>
+            </div>
+        </div>
+    </main>
+    
+    <!--Used Bootstrap modal for displaying the highscores-->  
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">

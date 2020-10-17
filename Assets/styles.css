@@ -9,6 +9,14 @@ h1, h3{
     margin: 30px;
 }
 
+/*Custom-styled the nav-like header component on the top of the page*/
+.right-nav, .nav-link{
+    margin:8px 15px;
+    font-size:17px;
+    color: #007bff;
+    font-weight: 600;
+}
+
 /* Created this class that will be used dynamically to display and hide the content within the container*/
 .hide{
     display: none;
@@ -29,14 +37,16 @@ li{
     max-width: 45%;   
 }
 
-/*Custom-styled the nav-like header component on the top of the page*/
-.right-nav, .nav-link{
-    margin:8px 15px;
-    font-size:17px;
-    color: #007bff;
-    font-weight: 600;
-}
-
 button{
     margin: 20px;
+}
+
+/* added media query to increase the width of the container and the li for better look and feel on smaller screens*/
+@media screen and (max-width: 768px) {
+    .container {
+      width: 80%;
+    }
+    li{
+      max-width:70%
+    }
 }

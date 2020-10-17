@@ -29,7 +29,7 @@ const quizQues = [
      opt: ['alert("Hello World!")', 'alertBox("Hello World!")', 'confirm("Hello World!")', 'prompt("Hello World!")']},
     {q: "3) How do you create a function in Javascript?",
      a: "function myFunction()",
-     opt: ["function myFunction()", "function:myFunction()", "function = myFunction()", "myFunction()"]},
+     opt: ["function myFunction()", "function: myFunction()", "function = myFunction()", "myFunction()"]},
     {q: "4) How does a FOR loop start?",
      a: "for(var i = 0; i <= 5; i++)",
      opt: ["for(var i = 0; i <= 5)", "for(var i = 0; i <= 5; i++)", "for var i = 1 to 5", "for(i <=5; i++)"]}, 
@@ -40,7 +40,7 @@ const quizQues = [
 
 // Initialize the index, score and time variables
 let currentIndex = 0;
-let secondsLeft = 180;
+let secondsLeft = 150;
 let score = 0;
 
 /* Functions*/
@@ -51,9 +51,9 @@ function setTime(){
          secondsLeft--;
          countdown.textContent= secondsLeft;
          // clear the timer if user cannot complete the quiz within 180 secs or when user has completed all teh questions before time
-         if(secondsLeft===0 || currentIndex===quizQues.length){
+         if(secondsLeft <= 0 || currentIndex===quizQues.length){
              clearInterval(timer);
-             countdown.textContent=0;
+             gotoInitialsPg();
          }
      },1000);
  }
@@ -99,6 +99,15 @@ function sortHighScores(highscoreArray){
     })
 }
 
+function gotoInitialsPg(){
+    // hides the question page
+    questionRow.classList.add("hide");
+    // unhides the user initials/final score page after all 5 questions are done
+    initialsPg.classList.remove("hide");
+    finalScore.textContent = score;
+    countdown.textContent=0;
+}
+
 /*Event Listeners*/
 
 // Added event listener to the Start Quiz button when user clicks it
@@ -128,10 +137,10 @@ options.addEventListener("click", function(event){
         else {
             // if answer does not match, display "Wrong"
            displayAns.children[1].textContent  = "Wrong!";
-           // take way 10 secs from remaining time for every incorrect answer per rules
+           // takes way 10 secs from remaining time for every incorrect answer per rules
            secondsLeft -= 10;
         }
-        // used the setTimeout function to wait for about a second before moving on to the next question
+        // waits for about a second before moving on to the next question
         setTimeout(function(){
             displayAns.children[1].textContent  = ""; 
             // goes to the next index in the quizQues array
@@ -139,50 +148,46 @@ options.addEventListener("click", function(event){
             if(currentIndex < quizQues.length){
                 displayQues(quizQues[currentIndex]);
             } else {
-                // hides the question page
-                questionRow.classList.add("hide");
-                // unhides the user initials/final score page after all 5 questions are done
-                initialsPg.classList.remove("hide");
-                finalScore.textContent = score;
+                gotoInitialsPg();
             }
-        },1500);  
+        },1200);  
     };
 })
 
 // Added event listener to submit button after user enters his/her initials
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
-    // retreiving the existing Highscore list from local storage
+    // retreives the existing Highscore list from local storage
     const highscoreTable = JSON.parse(localStorage.getItem("QuizHighScores")) || [];
     // create an object to be pushed into the highscoreTable array
     const currScore = {};
     currScore.name = initialsInput.value;
     currScore.score = score;
-    // adding the current initials and score as an object in the highscoreTable array
+    // adds the current initials and score as an object in the highscoreTable array
     highscoreTable[highscoreTable.length] = currScore;
-    // sorting the highscoreTable list after adding the current score
+    // sorts the highscoreTable list after adding the current score
     sortHighScores(highscoreTable);
-    // storing the sorted list in the local storage
+    // stores the sorted list in the local storage
     localStorage.setItem("QuizHighScores", JSON.stringify(highscoreTable));
     // handling the score, timer and initials input box values
-    initialsInput.value = "";
-    countdown.textContent = 0;
     score = 0;  
     points.textContent=score; 
-    // unhide the final page with button links to take quiz again and view highscores
+    initialsInput.value = "";
+    countdown.textContent = 0;
+    // unhides the final page with button links to take quiz again and view highscores
     finalPg.classList.remove("hide");
-    // hide this page on submit 
+    // hides this page on submit 
     initialsPg.classList.add("hide"); 
 })
 
 // Added event listener to 'Take Quiz again' button when user clicks on it
 takeQuizBtn.addEventListener("click", function(){
-    // resetting the currentIndex and secondsleft to be ready for the quiz game again
+    // resets the currentIndex and secondsleft to be ready for the quiz game again
     currentIndex=0;
     secondsLeft = 180;
-    // bring up the welcome page to strat the quiz again
+    // brings up the welcome page to strat the quiz again
     welcomePg.classList.remove("hide");
-    // hide this page
+    // hides this page
     finalPg.classList.add("hide");
 })
 
