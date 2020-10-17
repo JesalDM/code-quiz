@@ -24,8 +24,8 @@
    
     <!--Header that links to Highscores and displays time-left and score-->
     <div class="d-flex justify-content-between">
-        <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores-->
-        <a role="button" class="btn btn-link nav-link" data-toggle="modal" data-target="#exampleModalCenter">
+        <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores using the "onclick" attribute-->
+        <a role="button" onclick="getHighScores()" class="btn btn-link nav-link" data-toggle="modal" data-target="#exampleModalCenter">
             View Highscores
         </a>
         <div class="right-nav">
@@ -91,7 +91,8 @@
         <div class="final-pg hide">
             <!-- Used Bootstrap classes to create and style the buttons-->
             <button class="btn btn-primary btn-lg" id="go-back">Take Quiz again</button>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">View Highscores</button>
+            <!--Linking the ViewHighscores to the Bootstrap modal that will display the highscores using the "onclick" attribute-->
+            <button type="button" onclick="getHighScores()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">View Highscores</button>
         </div>
     </div>
 
@@ -106,7 +107,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <!--created a table using Bootstrap classes where the quiz highscores will be displayed to the user-->
+                    <table class="table table-striped table-bordered" >
+                        <thead>
+                            <tr>
+                                <th>Initials</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         
+                        </tbody>
+                    </table>            
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
