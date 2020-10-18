@@ -43,6 +43,21 @@ let currentIndex = 0;
 let secondsLeft = 150;
 let score = 0;
 
+/*Create and append elements*/
+
+// Creates and appends the div to display the answer on the questions page
+const div = document.createElement('div');
+displayAns.appendChild(div);
+
+// Creates and appends the (li)s for displaying the options using a loop. Also, adds event listener to these options when user hovers over them.
+for (let i = 0; i < quizQues[0].opt.length; i++){
+   const li = document.createElement('li');
+   options.appendChild(li);
+   li.addEventListener("mouseover", function(){
+     this.style.cursor = "pointer";
+   });
+}
+
 /* Functions*/
 
 // This function handles the time element by setting the time interval and clearing it based on a condition

@@ -42,7 +42,7 @@ button{
 }
 
 /* added media query to increase the width of the container and the li for better look and feel on smaller screens*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
     .container {
       width: 80%;
     }
