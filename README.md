@@ -1,5 +1,5 @@
-# hw-assign-04_code-quiz
-Homework Assignment 04 - Code Quiz
+# code-quiz
+A timed and scored javascript built code quiz application that tests the javascript fundamentals and saves the user high scores using client-side local storage.
 
 ## User Story
 
@@ -45,8 +45,8 @@ This application is a timed quiz game that tests the Javascript coding skills of
 
 ## For Review
 
-* Deployed Application URL: https://jesaldm.github.io/hw-assign-04_code-quiz/.
-* Github Repository URL: https://github.com/JesalDM/hw-assign-04_code-quiz
+* Deployed Application URL: https://jesaldm.github.io/code-quiz/.
+* Github Repository URL: https://github.com/JesalDM/code-quiz
 * Application functionality demo: ![Demo](./Assets/Javascript-Code-Quiz.gif)
 * Screenshots : 
   - ![Screenshot](./Assets/welcome-pg.png)
