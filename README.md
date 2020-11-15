@@ -34,6 +34,9 @@ This application is a timed quiz game that tests the Javascript coding skills of
 - The application features dynamically updated HTML and CSS powered by Javascript code.
 - The application uses the browser's local storage to store and retreive the Highscore values.
 
+## Technologies used:
+- HTML, CSS, Bootstrap, Javascript, client-side storage
+
 ## Additional Considerations
 
 - Used Bootstrap classes for a few components.
